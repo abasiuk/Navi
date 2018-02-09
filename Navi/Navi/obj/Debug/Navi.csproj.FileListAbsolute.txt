@@ -59,3 +59,5 @@ C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\Navi.csproj.GenerateResour
 C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\Navi.csproj.CoreCompileInputs.cache
 C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\Navi.exe
 C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\Navi.pdb
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\View\MainWelcomeContent.g.cs
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\View\MainWelcomeContent.baml

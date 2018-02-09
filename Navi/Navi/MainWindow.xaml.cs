@@ -80,6 +80,19 @@ namespace Navi
                     //отображаем
                     this.OutputView.Content = view;
                     break;
+                case ViewType.Main:
+                    //загружаем menu
+                    View.Menu viewMenu = new View.Menu();
+                    MenuViewModel vmMenu = new MenuViewModel(this);
+                    viewMenu.DataContext = vmMenu;
+                    this.LeftView.Content = viewMenu;
+
+                    //загружаем контент
+                    View.MainWelcomeContent viewWelcomeContent = new View.MainWelcomeContent();
+                    MainWelcomeContentViewModel vmWelcomeContent = new MainWelcomeContentViewModel(this);
+                    viewWelcomeContent.DataContext = vmWelcomeContent;
+                    this.OutputView.Content = viewWelcomeContent;
+                    break;
             }
         }
 

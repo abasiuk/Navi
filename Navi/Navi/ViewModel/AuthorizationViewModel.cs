@@ -49,7 +49,8 @@ namespace Navi.ViewModel
                     currentRow = ds.Tables[0].Rows[0];
                     if (this.PasswordText == currentRow.ItemArray.GetValue(2).ToString())
                     {
-                        _MainCodeBehind.ShowMessage("+");
+                        _MainCodeBehind.ShowMessage("Вітаємо  в системі!");
+                        _MainCodeBehind.LoadView(ViewType.Main);
                     }
                     else
                     {
