@@ -37,7 +37,7 @@ namespace Navi.ViewModel
         }
         private void LoadMainContent()
         {
-            _MainCodeBehind.ShowMessage("Привет от MainUC");
+            //_MainCodeBehind.ShowMessage("Привет от MainUC");
         }
 
         /// <summary>
