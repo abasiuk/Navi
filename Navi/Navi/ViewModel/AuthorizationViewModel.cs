@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ComponentModel;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,7 +38,32 @@ namespace Navi.ViewModel
         }
         private void LoadMainContent()
         {
-            //_MainCodeBehind.ShowMessage("Привет от MainUC");
+            if (this.LoginText != String.Empty && this.PasswordText != String.Empty && this.PasswordText != null && this.LoginText != null)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    DataRow currentRow;
+                    MyConnection connection = new MyConnection();
+                    ds = connection.GetData("SELECT * from users WHERE Login = '" + this.LoginText + "';");
+                    currentRow = ds.Tables[0].Rows[0];
+                    if (this.PasswordText == currentRow.ItemArray.GetValue(2).ToString())
+                    {
+                        _MainCodeBehind.ShowMessage("+");
+                    }
+                    else
+                    {
+                        _MainCodeBehind.ShowMessage("Пароль не вірний! Спробуйте ще.");
+                    }
+                }
+                catch (Exception)
+                {
+                    _MainCodeBehind.ShowMessage("Користувача з таким іменем не знайдено!");
+                }
+                
+            }
+            
+            
         }
 
         /// <summary>
@@ -67,5 +93,7 @@ namespace Navi.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(PasswordText)));
             }
         }
+
+        
     }
 }

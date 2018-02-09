@@ -8,9 +8,9 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" >
         <TextBlock Text="Ім'я користувача" FontSize="18" HorizontalAlignment="Center" Foreground="#FFF9DF6A" />
-        <TextBox Width="200" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,2"/>
+        <TextBox Text="{Binding LoginText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,2"/>
         <TextBlock Text="Пароль" FontSize="18" HorizontalAlignment="Center" Foreground="#FFF9DF6A" />
-        <TextBox Width="200" TextWrapping="Wrap" Text="{Binding _LoginText}" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,4"/>
+        <TextBox Width="200" TextWrapping="Wrap" Text="{Binding PasswordText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,4"/>
         <Button Content="Увійти в систему" Command="{Binding ValidateCommand, Mode=OneTime}"
                 Width="200" Margin="0,20,0,0" FontSize="18" Background="#FF94D766" Padding="1,1,1,4" BorderBrush="#FF1C972D"/>
 
