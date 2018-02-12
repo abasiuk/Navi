@@ -39,6 +39,7 @@ namespace Navi
     {
         Authorization,
         Main,
+        Clients,
         First,
         Second
     }
@@ -92,6 +93,12 @@ namespace Navi
                     MainWelcomeContentViewModel vmWelcomeContent = new MainWelcomeContentViewModel(this);
                     viewWelcomeContent.DataContext = vmWelcomeContent;
                     this.OutputView.Content = viewWelcomeContent;
+                    break;
+                case ViewType.Clients:
+                    View.ClientPage viewClient = new View.ClientPage();
+                    ClientPageViewModel vmClient = new ClientPageViewModel(this);
+                    viewClient.DataContext = vmClient;
+                    this.OutputView.Content = viewClient;
                     break;
             }
         }

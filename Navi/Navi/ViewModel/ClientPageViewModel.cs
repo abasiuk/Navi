@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
 
 namespace Navi.ViewModel
 {
-    class MainWelcomeContentViewModel : INotifyPropertyChanged
+    class ClientPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
@@ -15,7 +15,7 @@ namespace Navi.ViewModel
         private IMainWindowsCodeBehind _MainCodeBehind;
 
         //ctor
-        public MainWelcomeContentViewModel(IMainWindowsCodeBehind codeBehind)
+        public ClientPageViewModel(IMainWindowsCodeBehind codeBehind)
         {
             if (codeBehind == null) throw new ArgumentNullException(nameof(codeBehind));
 

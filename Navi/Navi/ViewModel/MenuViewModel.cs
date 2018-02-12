@@ -21,5 +21,22 @@ namespace Navi.ViewModel
 
             _MainCodeBehind = codeBehind;
         }
+        private RelayCommand _LoadClientPage;
+        public RelayCommand LoadClientPage
+        {
+            get
+            {
+                return _LoadClientPage = _LoadClientPage ??
+                  new RelayCommand(LoadMainContent, CanLoadMainContent);
+            }
+        }
+        private bool CanLoadMainContent()
+        {
+            return true;
+        }
+        private void LoadMainContent()
+        {
+            _MainCodeBehind.LoadView(ViewType.Clients);
+        }
     }
 }

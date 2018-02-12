@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Navi.ViewModel
 {
@@ -49,8 +50,8 @@ namespace Navi.ViewModel
                     currentRow = ds.Tables[0].Rows[0];
                     if (this.PasswordText == currentRow.ItemArray.GetValue(2).ToString())
                     {
-                        _MainCodeBehind.ShowMessage("Вітаємо  в системі!");
                         _MainCodeBehind.LoadView(ViewType.Main);
+                        _MainCodeBehind.ShowMessage("Вітаємо  в системі!");
                     }
                     else
                     {
@@ -84,7 +85,7 @@ namespace Navi.ViewModel
         /// <summary>
         /// Пароль
         /// </summary>
-        private string _PasswordText;
+        private string _PasswordText = "1";
         public string PasswordText
         {
             get { return _PasswordText; }

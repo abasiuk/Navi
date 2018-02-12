@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Navi.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWelcomeContent.xaml
+    /// Логика взаимодействия для ClientPage.xaml
     /// </summary>
-    public partial class MainWelcomeContent : UserControl
+    public partial class ClientPage : UserControl
     {
-        public MainWelcomeContent()
+        public ClientPage()
         {
             InitializeComponent();
         }
