@@ -10,8 +10,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="1111111" Grid.Row="0"></TextBlock>
-        <TextBlock Text="2222222" Grid.Row="1"></TextBlock>
+        <TextBlock Text="Пошук клієнта" Grid.Row="0" FontSize="20" Foreground="#FF3AFF43" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="1" Width="300" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,4" Margin="0,10" FontSize="16"/>
     </Grid>
 </UserControl>
