@@ -12,7 +12,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Пошук клієнта" Grid.Row="0" FontSize="20" Foreground="#FF3AFF43" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="1" Width="300" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="0,4" Margin="0,10" FontSize="16"/>
+        <TextBlock Text="Пошук клієнта" Grid.Row="0" FontSize="20" Foreground="#FF3AFF43" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+        <TextBox Text="{Binding Pattern, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Width="300" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" Padding="0,4" Margin="5,10,0,10" FontSize="16"/>
+        <ListBox Grid.Row="2" Margin="5" MaxHeight="150"
+             ItemsSource="{Binding Strings}"
+             SelectedItem="{Binding Selected}" SelectionChanged="OnSelectionChanged" HorizontalAlignment="Left" Width="300"/>
     </Grid>
 </UserControl>
