@@ -29,6 +29,8 @@ namespace Navi.Model
 
         }
 
+        
+
         public Client(int id, string firstName, string lastName, int age, string dateBorn, string email, string dateOfFirstVisit, string dateOfLastVisit, string typeOfSubscription)
         {
             this.id = id;
@@ -56,6 +58,37 @@ namespace Navi.Model
             }
 
             return allClients;
+        }
+
+        public ObservableCollection<Client> GetCollectionClient()
+        {
+            ObservableCollection<Client> allClients = new ObservableCollection<Client>();
+
+            DataSet ds = new DataSet();
+            DataRow currentRow;
+            ViewModel.MyConnection myConn = new ViewModel.MyConnection();
+            ds = myConn.GetData("SELECT * from Clients");
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                currentRow = ds.Tables[0].Rows[i];
+                allClients.Add(new Client((int) currentRow.ItemArray.GetValue(0), currentRow.ItemArray.GetValue(1).ToString(), currentRow.ItemArray.GetValue(2).ToString(), (int) currentRow.ItemArray.GetValue(3), currentRow.ItemArray.GetValue(4).ToString(), currentRow.ItemArray.GetValue(5).ToString(), currentRow.ItemArray.GetValue(6).ToString(), currentRow.ItemArray.GetValue(7).ToString(), currentRow.ItemArray.GetValue(8).ToString()));
+            }
+
+            return allClients;
+        }
+
+        public override string ToString()
+        {
+            return this.id.ToString() + " - " + this.firstName + " " + this.lastName;
+        }
+
+        public string getFullName()
+        {
+            string result = "";
+
+            result += this.firstName + " " + this.lastName;
+
+            return result;
         }
     }
 }

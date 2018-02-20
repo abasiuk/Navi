@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
+using Navi.Model;
 
 namespace Navi.ViewModel
 {
@@ -15,7 +16,7 @@ namespace Navi.ViewModel
 
         //Fields
         private IMainWindowsCodeBehind _MainCodeBehind;
-        public ObservableCollection<string> Strings { get; }
+        public ObservableCollection<Model.Client> Strings { get; set; }
         private Model.Client cl = new Model.Client();
 
         //ctor
@@ -25,7 +26,7 @@ namespace Navi.ViewModel
 
             _MainCodeBehind = codeBehind;
 
-            Strings = cl.getCollectionAllNameCLients();
+            Strings = cl.GetCollectionClient();
         }
 
         string _pattern;
@@ -35,12 +36,13 @@ namespace Navi.ViewModel
             set
             {
                 Set(ref _pattern, value);
-                Selected = Strings.FirstOrDefault(s => s.StartsWith(Pattern));
+
+                Selected = (Model.Client)Strings.Where(x => x.ToString() == Pattern);
             }
         }
 
-        string _selected;
-        public string Selected
+        Model.Client _selected;
+        public Model.Client Selected
         {
             get => _selected;
             set => Set(ref _selected, value);
