@@ -37,7 +37,7 @@ namespace Navi.ViewModel
             {
                 Set(ref _pattern, value);
 
-                Selected = (Model.Client)Strings.Where(x => x.ToString() == Pattern);
+                Selected = (Model.Client)Strings.FirstOrDefault(x => x.ToString().StartsWith(Pattern));
             }
         }
 
