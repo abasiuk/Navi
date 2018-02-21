@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\App.xaml
-5-1810656248
+7-1829594860
 
 17-218585826
 14547662658
-MainWindow.xaml;View\Authorization.xaml;View\ClientPage.xaml;View\MainWelcomeContent.xaml;View\Menu.xaml;
+MainWindow.xaml;Styles\Colors.xaml;Styles\Style.xaml;View\Authorization.xaml;View\ClientPage.xaml;View\MainWelcomeContent.xaml;View\Menu.xaml;
 
 False
 

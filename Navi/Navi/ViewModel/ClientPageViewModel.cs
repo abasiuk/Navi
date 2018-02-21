@@ -36,8 +36,12 @@ namespace Navi.ViewModel
             set
             {
                 Set(ref _pattern, value);
-
                 Selected = (Model.Client)Strings.FirstOrDefault(x => x.ToString().StartsWith(Pattern));
+                CurrentName = Selected.getFullName();
+                CurrentID = Selected.ID.ToString();
+                CurrentAge = Selected.Age.ToString();
+                CurrentDateBorn = Selected.DateBorn;
+                CurrentDateOfLastVisit = Selected.DateOfLastVisit;
             }
         }
 
@@ -48,6 +52,46 @@ namespace Navi.ViewModel
             set => Set(ref _selected, value);
         }
 
+        string _currentName = "Ім'я";
+
+        public string CurrentName
+        {
+            get => _currentName;
+            set => Set(ref _currentName, value);
+        }
+
+        string _currentID = "0000";
+
+        public string CurrentID
+        {
+            get => _currentID;
+            set => Set(ref _currentID, value);
+        }
+
+        string _currentAge = "00";
+
+        public string CurrentAge
+        {
+            get => _currentAge;
+            set => Set(ref _currentAge, value);
+        }
+
+        string _currentDateBorn = "**.**.****";
+
+        public string CurrentDateBorn
+        {
+            get => _currentDateBorn;
+            set => Set(ref _currentDateBorn, value);
+        }
+
+        string _currentDateOfLastVisit = "**.**.****";
+
+        public string CurrentDateOfLastVisit
+        {
+            get => _currentDateOfLastVisit;
+            set => Set(ref _currentDateOfLastVisit, value);
+        }
+        
         protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = "")
         {
             field = value;

@@ -29,8 +29,6 @@ namespace Navi.Model
 
         }
 
-        
-
         public Client(int id, string firstName, string lastName, int age, string dateBorn, string email, string dateOfFirstVisit, string dateOfLastVisit, string typeOfSubscription)
         {
             this.id = id;
@@ -42,6 +40,51 @@ namespace Navi.Model
             this.dateOfFirstVisit = dateOfFirstVisit;
             this.dateOfLastVisit = dateOfLastVisit;
             this.typeOfSubscription = typeOfSubscription;
+        }
+
+        public string FirstName
+        {
+            get => this.firstName;
+        }
+
+        public int ID
+        {
+            get => this.id;
+        }
+
+        public string LastName
+        {
+            get => this.lastName;
+        }
+
+        public int Age
+        {
+            get => this.age;
+        }
+
+        public string DateBorn
+        {
+            get => this.dateBorn;
+        }
+
+        public string Email
+        {
+            get => this.email;
+        }
+
+        public string DateOfFirstVisit
+        {
+            get => this.DateOfFirstVisit;
+        }
+
+        public string DateOfLastVisit
+        {
+            get => this.dateOfLastVisit;
+        }
+
+        public string TypeOfSubscription
+        {
+            get => this.typeOfSubscription;
         }
 
         public ObservableCollection<string> getCollectionAllNameCLients()
