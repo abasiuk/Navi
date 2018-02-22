@@ -20,15 +20,17 @@
             </ListBox>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Image  Width="150" Height="200"/>
+            <Image  Width="150" Height="200" Source="test.jpg"/>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" MinWidth="220"/>
+                    <ColumnDefinition Width="1*" MinWidth="220"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="0,0,5,0">
                     <TextBlock Style="{StaticResource BaseText}" Text="ID:" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                     <TextBlock Style="{StaticResource BaseText}" Text="Ім'я:" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                    <TextBlock Style="{StaticResource BaseText}" Text="Email:" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+
                     <TextBlock Style="{StaticResource BaseText}" Text="Вік:" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                     <TextBlock Style="{StaticResource BaseText}" Text="Дата народження:" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                     <TextBlock Style="{StaticResource BaseText}" Text="Дата останнього відвідування:" HorizontalAlignment="Right" Margin="0,0,5,0"/>
@@ -37,6 +39,8 @@
                 <StackPanel Grid.Column="1">
                     <TextBlock Style="{StaticResource LightBaseText}" Text="{Binding CurrentID, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock Style="{StaticResource LightBaseText}" Text="{Binding CurrentName, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Style="{StaticResource LightBaseText}" Text="{Binding CurrentEmail, UpdateSourceTrigger=PropertyChanged}"/>
+
                     <TextBlock Style="{StaticResource LightBaseText}" Text="{Binding CurrentAge, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock Style="{StaticResource LightBaseText}" Text="{Binding CurrentDateBorn, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock Style="{StaticResource LightBaseText}" Text="{Binding CurrentDateOfLastVisit, UpdateSourceTrigger=PropertyChanged}"/>

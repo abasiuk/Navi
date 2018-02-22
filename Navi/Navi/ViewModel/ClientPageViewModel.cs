@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using Navi.Model;
+using System.Windows.Media.Imaging;
 
 namespace Navi.ViewModel
 {
@@ -37,11 +38,15 @@ namespace Navi.ViewModel
             {
                 Set(ref _pattern, value);
                 Selected = (Model.Client)Strings.FirstOrDefault(x => x.ToString().StartsWith(Pattern));
-                CurrentName = Selected.getFullName();
-                CurrentID = Selected.ID.ToString();
-                CurrentAge = Selected.Age.ToString();
-                CurrentDateBorn = Selected.DateBorn;
-                CurrentDateOfLastVisit = Selected.DateOfLastVisit;
+                if (Selected != null)
+                {
+                    CurrentName = Selected.getFullName();
+                    CurrentID = Selected.ID.ToString();
+                    CurrentAge = Selected.Age.ToString();
+                    CurrentDateBorn = Selected.DateBorn;
+                    CurrentDateOfLastVisit = Selected.DateOfLastVisit;
+                    CurrentEmail = Selected.Email;
+                }
             }
         }
 
@@ -91,7 +96,23 @@ namespace Navi.ViewModel
             get => _currentDateOfLastVisit;
             set => Set(ref _currentDateOfLastVisit, value);
         }
-        
+
+        string _currentEmail = "aaaaa@ga.ua";
+
+        public string CurrentEmail
+        {
+            get => _currentEmail;
+            set => Set(ref _currentEmail, value);
+        }
+
+        BitmapImage _currentPhoto;
+
+        public BitmapImage CurrentPhoto
+        {
+            get => _currentPhoto;
+            set => Set(ref _currentPhoto, value);
+        }
+
         protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = "")
         {
             field = value;

@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Data;
+using FilePath = System.IO.Path;
+using System.Reflection;
+using System.Windows.Media.Imaging;
 
 namespace Navi.Model
 {
@@ -23,13 +26,14 @@ namespace Navi.Model
         private string dateOfLastVisit;
 
         private string typeOfSubscription;
+        private string photo;
 
         public Client()
         {
 
         }
 
-        public Client(int id, string firstName, string lastName, int age, string dateBorn, string email, string dateOfFirstVisit, string dateOfLastVisit, string typeOfSubscription)
+        public Client(int id, string firstName, string lastName, int age, string dateBorn, string email, string dateOfFirstVisit, string dateOfLastVisit, string typeOfSubscription, string photo)
         {
             this.id = id;
             this.firstName = firstName;
@@ -40,6 +44,7 @@ namespace Navi.Model
             this.dateOfFirstVisit = dateOfFirstVisit;
             this.dateOfLastVisit = dateOfLastVisit;
             this.typeOfSubscription = typeOfSubscription;
+            this.photo = photo;
         }
 
         public string FirstName
@@ -87,6 +92,15 @@ namespace Navi.Model
             get => this.typeOfSubscription;
         }
 
+        public BitmapImage Photo
+        {
+            get
+            {
+                var dir = FilePath.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                return new BitmapImage(new Uri( FilePath.Combine(dir, "\\Images\\test.jpg" )));
+            }
+        }
+
         public ObservableCollection<string> getCollectionAllNameCLients()
         {
             ObservableCollection<string> allClients = new ObservableCollection<string>();
@@ -114,7 +128,7 @@ namespace Navi.Model
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 currentRow = ds.Tables[0].Rows[i];
-                allClients.Add(new Client((int) currentRow.ItemArray.GetValue(0), currentRow.ItemArray.GetValue(1).ToString(), currentRow.ItemArray.GetValue(2).ToString(), (int) currentRow.ItemArray.GetValue(3), currentRow.ItemArray.GetValue(4).ToString(), currentRow.ItemArray.GetValue(5).ToString(), currentRow.ItemArray.GetValue(6).ToString(), currentRow.ItemArray.GetValue(7).ToString(), currentRow.ItemArray.GetValue(8).ToString()));
+                allClients.Add(new Client((int) currentRow.ItemArray.GetValue(0), currentRow.ItemArray.GetValue(1).ToString(), currentRow.ItemArray.GetValue(2).ToString(), (int) currentRow.ItemArray.GetValue(3), currentRow.ItemArray.GetValue(4).ToString(), currentRow.ItemArray.GetValue(5).ToString(), currentRow.ItemArray.GetValue(6).ToString(), currentRow.ItemArray.GetValue(7).ToString(), currentRow.ItemArray.GetValue(8).ToString(), currentRow.ItemArray.GetValue(9).ToString()));
             }
 
             return allClients;

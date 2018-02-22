@@ -3,13 +3,13 @@
                     xmlns:local="clr-namespace:Navi.Styles">
 
     <Style x:Key="BaseText" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Foreground" Value="Black"/>
     </Style>
 
     <Style x:Key="LightBaseText" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="{StaticResource BaseBrush}"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
     
 </ResourceDictionary>
