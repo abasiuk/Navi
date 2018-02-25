@@ -39,6 +39,33 @@ namespace Navi.ViewModel
             return data_set;
         }
 
+        public DataSet GetData(string sqlQuery, string nameTable)
+        {
+            DataSet data_set = new DataSet();
+            using (MySqlConnection cn = new MySqlConnection())
+            {
+                cn.ConnectionString = this.connectionString;
+                try
+                {
+                    cn.Open();
+
+                    MySqlDataAdapter da = new MySqlDataAdapter(sqlQuery, cn);
+
+                    da.Fill(data_set, nameTable);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                finally
+                {
+                    cn.Close();
+                }
+            }
+
+            return data_set;
+        }
+
         public void UpdateData(DataSet ds, string nameTable)
         {
             string sqlQuery = "Select * from " + nameTable + ";";
@@ -49,10 +76,16 @@ namespace Navi.ViewModel
                 {
                     cn.Open();
 
-                    MySqlCommandBuilder cb = new MySqlCommandBuilder();
+                    DataSet localDS = new DataSet();
                     MySqlDataAdapter da = new MySqlDataAdapter(sqlQuery, cn);
+                    da.FillSchema(localDS, SchemaType.Source, nameTable);
+                    da.Fill(localDS, nameTable);
 
-                    cb.DataAdapter.Update(ds.Tables[0]);
+                    localDS = ds;
+
+                    MySqlCommandBuilder cb = new MySqlCommandBuilder(da);
+
+                    da.Update(localDS, nameTable);
                 }
                 catch (Exception ex)
                 {

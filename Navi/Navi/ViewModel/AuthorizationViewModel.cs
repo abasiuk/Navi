@@ -51,6 +51,8 @@ namespace Navi.ViewModel
                     if (this.PasswordText == currentRow.ItemArray.GetValue(2).ToString())
                     {
                         _MainCodeBehind.LoadView(ViewType.Main);
+                        Model.Client cl = new Model.Client();
+                        cl.ReadImageFromDatabase();
                         _MainCodeBehind.ShowMessage("Вітаємо  в системі!");
                     }
                     else
@@ -58,9 +60,9 @@ namespace Navi.ViewModel
                         _MainCodeBehind.ShowMessage("Пароль не вірний! Спробуйте ще.");
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    _MainCodeBehind.ShowMessage("Користувача з таким іменем не знайдено!");
+                    _MainCodeBehind.ShowMessage(e.ToString());
                 }
                 
             }

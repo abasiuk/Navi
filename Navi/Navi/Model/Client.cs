@@ -125,13 +125,60 @@ namespace Navi.Model
             return this.id.ToString() + " - " + this.firstName + " " + this.lastName;
         }
 
-        public string getFullName()
+        public string GetFullName()
         {
             string result = "";
 
             result += this.firstName + " " + this.lastName;
 
             return result;
+        }
+
+        public void SaveImageToDataBase(string fileName, int userId)
+        {
+            string shortFileName = fileName.Substring(fileName.LastIndexOf('\\') + 1);
+
+            byte[] imageData;
+            using (System.IO.FileStream fs = new System.IO.FileStream(fileName, System.IO.FileMode.Open))
+            {
+                imageData = new byte[fs.Length];
+                fs.Read(imageData, 0, imageData.Length);
+            }
+
+            DataSet ds = new DataSet();
+            ViewModel.MyConnection myConn = new ViewModel.MyConnection();
+            ds = myConn.GetData("SELECT * from photos", "photos");
+            DataRow currentRow = ds.Tables["photos"].NewRow();
+            currentRow[1] = userId;
+            currentRow[2] = shortFileName;
+            currentRow[3] = imageData;
+            ds.Tables["photos"].Rows.Add(currentRow);
+
+            myConn.UpdateData(ds, "photos");
+        }
+
+        public void ReadImageFromDatabase()
+        {
+            List<ImageData> images = new List<ImageData>();
+            DataSet ds = new DataSet();
+            DataRow currentRow;
+            ViewModel.MyConnection myConn = new ViewModel.MyConnection();
+            ds = myConn.GetData("SELECT * from photos", "photos");
+
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                currentRow = ds.Tables["photos"].Rows[i];
+                ImageData image = new ImageData((int)currentRow.ItemArray.GetValue(0), (int)currentRow.ItemArray.GetValue(1), (string)currentRow.ItemArray.GetValue(2), (byte[]) currentRow.ItemArray.GetValue(3));
+                images.Add(image);
+            }
+
+            if (images.Count > 0)
+            {
+                using (System.IO.FileStream fs = new System.IO.FileStream( images[0].FileName, System.IO.FileMode.OpenOrCreate))
+                {
+                    fs.Write(images[0].Data, 0, images[0].Data.Length);
+                }
+            }
         }
     }
 }

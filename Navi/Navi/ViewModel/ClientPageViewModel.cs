@@ -37,11 +37,14 @@ namespace Navi.ViewModel
             {
                 Set(ref _pattern, value);
                 Selected = (Model.Client)Strings.FirstOrDefault(x => x.ToString().StartsWith(Pattern));
-                CurrentName = Selected.getFullName();
-                CurrentID = Selected.ID.ToString();
-                CurrentAge = Selected.Age.ToString();
-                CurrentDateBorn = Selected.DateBorn;
-                CurrentDateOfLastVisit = Selected.DateOfLastVisit;
+                if (Selected != null)
+                {
+                    CurrentName = Selected.GetFullName();
+                    CurrentID = Selected.ID.ToString();
+                    CurrentAge = Selected.Age.ToString();
+                    CurrentDateBorn = Selected.DateBorn;
+                    CurrentDateOfLastVisit = Selected.DateOfLastVisit;
+                }
             }
         }
 
