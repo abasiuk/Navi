@@ -52,7 +52,7 @@ namespace Navi.ViewModel
                     {
                         _MainCodeBehind.LoadView(ViewType.Main);
                         Model.Client cl = new Model.Client();
-                        cl.ReadImageFromDatabase();
+                        Model.Photos.ReadImageFromDatabase();
                         _MainCodeBehind.ShowMessage("Вітаємо  в системі!");
                     }
                     else

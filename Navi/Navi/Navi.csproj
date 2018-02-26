@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\ImageData.cs" />
+    <Compile Include="Model\Photos.cs" />
     <Compile Include="ViewModel\AuthorizationViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ClientPageViewModel.cs" />

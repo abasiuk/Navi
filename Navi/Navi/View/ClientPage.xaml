@@ -14,13 +14,17 @@
         <StackPanel Grid.Column="0">
             <TextBlock Text="Пошук клієнта" FontSize="20" Foreground="#FF3AFF43" Margin="5,0,0,0" MaxWidth="300"/>
             <TextBox Text="{Binding Pattern, UpdateSourceTrigger=PropertyChanged}" MaxWidth="300" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Padding="0,4" Margin="5,10" FontSize="16"/>
-            <ListBox Margin="5" MaxHeight="150"
+            <ListBox Margin="5" MaxHeight="300"
                      ItemsSource="{Binding Strings}"
                      SelectedItem="{Binding Selected}" SelectionChanged="OnSelectionChanged" HorizontalAlignment="Stretch" MaxWidth="300">
             </ListBox>
+            <Button Style="{StaticResource MainButton}" Content="Добавити клієнта"/>
+            <Button Style="{StaticResource MainButton}" Content="Видалити клієнта"/>
+            <Button Style="{StaticResource MainButton}" Content="Детальніше про клієнта"/>
+
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Image  Width="150" Height="200"/>
+            <Image Source="{Binding CurrentPhoto}" Width="150" Height="200"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" MinWidth="230"/>

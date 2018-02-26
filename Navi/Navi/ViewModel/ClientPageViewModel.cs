@@ -44,6 +44,7 @@ namespace Navi.ViewModel
                     CurrentAge = Selected.Age.ToString();
                     CurrentDateBorn = Selected.DateBorn;
                     CurrentDateOfLastVisit = Selected.DateOfLastVisit;
+                    CurrentPhoto = Photos.GetUserPhoto(Selected.ID);
                 }
             }
         }
@@ -77,6 +78,14 @@ namespace Navi.ViewModel
         {
             get => _currentAge;
             set => Set(ref _currentAge, value);
+        }
+
+        string _currentPhoto = "00";
+
+        public string CurrentPhoto
+        {
+            get => _currentPhoto;
+            set => Set(ref _currentPhoto, value);
         }
 
         string _currentDateBorn = "**.**.****";
