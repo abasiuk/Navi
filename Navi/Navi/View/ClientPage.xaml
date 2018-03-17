@@ -18,7 +18,7 @@
                      ItemsSource="{Binding Strings}"
                      SelectedItem="{Binding Selected}" SelectionChanged="OnSelectionChanged" HorizontalAlignment="Stretch" MaxWidth="300">
             </ListBox>
-            <Button Style="{StaticResource MainButton}" Content="Добавити клієнта"/>
+            <Button Style="{StaticResource MainButton}" Content="Добавити клієнта" Command="{Binding AddClientCommand, Mode=OneTime}"/>
             <Button Style="{StaticResource MainButton}" Content="Видалити клієнта"/>
             <Button Style="{StaticResource MainButton}" Content="Детальніше про клієнта"/>
 

@@ -109,5 +109,23 @@ namespace Navi.ViewModel
             field = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private RelayCommand _AddClientCommand;
+        public RelayCommand AddClientCommand
+        {
+            get
+            {
+                return _AddClientCommand = _AddClientCommand ??
+                  new RelayCommand(LoadMainContent, CanLoadMainContent);
+            }
+        }
+        private bool CanLoadMainContent()
+        {
+            return true;
+        }
+        private void LoadMainContent()
+        {
+            _MainCodeBehind.LoadView(ViewType.AddClient);
+        }
     }
 }

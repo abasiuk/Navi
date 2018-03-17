@@ -195,3 +195,8 @@ C:\Users\Everad\Source\Repos\Navi3\Navi\Navi\obj\Debug\Navi.csproj.GenerateResou
 C:\Users\Everad\Source\Repos\Navi3\Navi\Navi\obj\Debug\Navi.csproj.CoreCompileInputs.cache
 C:\Users\Everad\Source\Repos\Navi3\Navi\Navi\obj\Debug\Navi.exe
 C:\Users\Everad\Source\Repos\Navi3\Navi\Navi\obj\Debug\Navi.pdb
+C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\App.baml
+C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\Styles\Colors.baml
+C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\Styles\Style.baml
+C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\View\AddClientView.g.cs
+C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\View\AddClientView.baml

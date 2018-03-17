@@ -38,6 +38,7 @@ namespace Navi
     public enum ViewType
     {
         Authorization,
+        AddClient,
         Main,
         Clients,
         First,
@@ -99,6 +100,12 @@ namespace Navi
                     ClientPageViewModel vmClient = new ClientPageViewModel(this);
                     viewClient.DataContext = vmClient;
                     this.OutputView.Content = viewClient;
+                    break;
+                case ViewType.AddClient:
+                    View.AddClientView addClView = new View.AddClientView();
+                    AddClientViewModel vmAddCl = new AddClientViewModel(this);
+                    addClView.DataContext = vmAddCl;
+                    this.OutputView.Content = addClView;
                     break;
             }
         }

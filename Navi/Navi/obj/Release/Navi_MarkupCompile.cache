@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\CSharp\Navi1\Navi\Navi\obj\Release\
+C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Release\
 Navi
 none
 false
 TRACE
-D:\CSharp\Navi1\Navi\Navi\App.xaml
-5-1810656248
+C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\App.xaml
+8925074396
 
-161691149270
+21260804135
 14547662658
-MainWindow.xaml;View\Authorization.xaml;View\ClientPage.xaml;View\MainWelcomeContent.xaml;View\Menu.xaml;
+MainWindow.xaml;Styles\Colors.xaml;Styles\Style.xaml;View\AddClientView.xaml;View\Authorization.xaml;View\ClientPage.xaml;View\MainWelcomeContent.xaml;View\Menu.xaml;
 
 True
 
