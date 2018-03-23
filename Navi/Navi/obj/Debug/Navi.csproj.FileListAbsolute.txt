@@ -200,3 +200,10 @@ C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\Styles\C
 C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\Styles\Style.baml
 C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\View\AddClientView.g.cs
 C:\Users\Пользователь\Source\Repos\Navi\Navi\Navi\obj\Debug\View\AddClientView.baml
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\View\AddClientView.g.cs
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\View\ClientPage.g.cs
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\App.baml
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\Styles\Colors.baml
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\Styles\Style.baml
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\View\AddClientView.baml
+C:\Users\Everad\Source\Repos\Navi\Navi\Navi\obj\Debug\View\ClientPage.baml

@@ -20,7 +20,7 @@
         <TextBlock Text="Email" FontSize="18" HorizontalAlignment="Center" Foreground="#FFF9DF6A" />
         <TextBox Text="{Binding EmailText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,2"/>
         <TextBlock Text="Дата народження" FontSize="18" HorizontalAlignment="Center" Foreground="#FFF9DF6A" />
-        <TextBox Text="{Binding DateBornText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,2"/>
+        <DatePicker Text ="{Binding DateBornText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,2"/>
         <TextBlock Text="Вид абонементу" FontSize="18" HorizontalAlignment="Center" Foreground="#FFF9DF6A" />
         <TextBox Text="{Binding SubscriptionText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="18" Padding="0,0,0,2"/>
             <Button Command="{Binding AddCommand, Mode=OneTime}" Style="{StaticResource MainButton}" Content="Добавити" Width="200"/>

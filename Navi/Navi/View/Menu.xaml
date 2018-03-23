@@ -16,13 +16,13 @@
         <Button Command="{Binding LoadFirstUCCommand, Mode=OneTime}"
                 Height="Auto" MinHeight="50">
             <TextBlock FontFamily="Segoe UI Symbol" FontSize="14">
-                        <Run Text="&#xE2AF;" />
+                        <Run Text="&#xE2AF; Абонементи" />
             </TextBlock>
         </Button>
         <Button Command="{Binding LoadSecondUCCommand, Mode=OneTime}"
                 Height="Auto" MinHeight="50">
             <TextBlock FontFamily="Segoe UI Symbol" FontSize="14">
-                        <Run Text="&#xE1E2;" />
+                        <Run Text="&#xE1E2; " />
             </TextBlock>
         </Button>
     </StackPanel>

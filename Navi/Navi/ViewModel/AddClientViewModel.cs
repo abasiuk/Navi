@@ -105,6 +105,32 @@ namespace Navi.ViewModel
         {
             if ( LastNameText != String.Empty && FirstNameText != String.Empty && EmailText != String.Empty && DateBornText != String.Empty && SubscriptionText != String.Empty )
             {
+                DateTime d = DateTime.ParseExact(DateBornText, "dd.mm.yyyy", null);
+                DateTime current = DateTime.Now;
+
+                int totalYears = current.Year - d.Year;
+                int totalMonths = 0;
+
+                if(current.Month > d.Month)
+                {
+                    totalMonths = current.Month - d.Month;
+                }else if(current.Month < d.Month)
+                {
+                    totalYears -= 1;
+                    int monthDifference = d.Month - current.Month;
+                    totalMonths = 12 - monthDifference;
+                }
+
+                if ((current.Day - d.Day) == 30)
+                {
+                    totalMonths += 1;
+                    if (totalMonths % 12 == 0)
+                    {
+                        totalYears += 1;
+                        totalMonths = 0;
+                    }
+                }
+
                 DataSet ds = new DataSet();
                 ViewModel.MyConnection myConn = new ViewModel.MyConnection();
                 ds = myConn.GetData("SELECT * from clients", "clients");
@@ -112,13 +138,17 @@ namespace Navi.ViewModel
                 currentRow[0] = Int32.Parse(ds.Tables["clients"].Rows[ds.Tables["clients"].Rows.Count - 1][0].ToString()) + 1;
                 currentRow[1] = FirstNameText;
                 currentRow[2] = LastNameText;
+                currentRow[3] = totalYears;
                 currentRow[4] = DateBornText;
                 currentRow[5] = EmailText;
+                currentRow[6] = DateTime.Now.ToString().Split(new char[] { ' ' })[0].ToString();
+                currentRow[7] = DateTime.Now.ToString().Split(new char[] { ' ' })[0].ToString();
                 currentRow[8] = SubscriptionText;
                 ds.Tables["clients"].Rows.Add(currentRow);
 
                 myConn.UpdateData(ds, "clients");
             }
         }
+
     }
 }
