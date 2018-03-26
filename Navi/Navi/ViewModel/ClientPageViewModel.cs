@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using Navi.Model;
+using System.Data;
 
 namespace Navi.ViewModel
 {
@@ -116,16 +117,59 @@ namespace Navi.ViewModel
             get
             {
                 return _AddClientCommand = _AddClientCommand ??
-                  new RelayCommand(LoadMainContent, CanLoadMainContent);
+                  new RelayCommand(LoadAddClientContent, CanLoadAddClientContent);
             }
         }
-        private bool CanLoadMainContent()
+        private bool CanLoadAddClientContent()
         {
             return true;
         }
-        private void LoadMainContent()
+        private void LoadAddClientContent()
         {
             _MainCodeBehind.LoadView(ViewType.AddClient);
+        }
+
+        private RelayCommand _RemoveClientCommand;
+        public RelayCommand RemoveClientCommand
+        {
+            get
+            {
+                return _RemoveClientCommand = _RemoveClientCommand ??
+                  new RelayCommand(LoadRemoveClientContent, CanLoadRemoveClientContent);
+            }
+        }
+        private bool CanLoadRemoveClientContent()
+        {
+            return true;
+        }
+        private void LoadRemoveClientContent()
+        {
+            if (Selected != null)
+            {
+                if (_MainCodeBehind.AnswerMessage("Дійсно хочете видалити " + Selected.GetFullName() + " із Бази? Інформацію про нього буде неможливо відновити!", "Підтвердження"))
+                {
+                    DataSet ds = new DataSet();
+                    ViewModel.MyConnection myConn = new ViewModel.MyConnection();
+                    ds = myConn.GetData("SELECT * from clients", "clients");
+                    DataColumn dc = ds.Tables["clients"].Columns[0];
+                    ds.Tables["clients"].PrimaryKey = dc;
+                    ds.Tables["clients"].Rows.Find(Selected.ID).Delete();
+
+                    myConn.UpdateData(ds, "clients");
+
+                    _MainCodeBehind.ShowMessage(Selected.FirstName);
+                }
+                else
+                {
+                    
+
+                }
+            }
+            else
+            {
+                _MainCodeBehind.ShowMessage("Жоден клієнт не вибраний!");
+            }
+            
         }
     }
 }

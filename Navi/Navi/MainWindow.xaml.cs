@@ -30,6 +30,8 @@ namespace Navi
         /// </summary>
         /// <param name="view">экземпляр UserControl</param>
         void LoadView(ViewType typeView);
+
+        bool AnswerMessage(string msg, string cap);
     }
 
     /// <summary>
@@ -112,7 +114,19 @@ namespace Navi
 
         public void ShowMessage(string message)
         {
-            MessageBox.Show(message);
+            MessageBox.Show(message, "Інформація", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        public bool AnswerMessage(string msg, string cap)
+        {
+            if (MessageBox.Show(msg, cap, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
