@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\
+D:\dyplom\Navi\Navi\obj\Debug\
 Navi
 none
 false
 DEBUG;TRACE
-C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\App.xaml
+D:\dyplom\Navi\Navi\App.xaml
 9-1164717769
 
-26-349235553
+261057902863
 14547662658
 MainWindow.xaml;Styles\Colors.xaml;Styles\Style.xaml;View\AddClientView.xaml;View\Authorization.xaml;View\ClientPage.xaml;View\MainWelcomeContent.xaml;View\Menu.xaml;View\ShowMoreClientView.xaml;
 
-False
+True
 

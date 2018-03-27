@@ -147,6 +147,12 @@ namespace Navi.ViewModel
                 ds.Tables["clients"].Rows.Add(currentRow);
 
                 myConn.UpdateData(ds, "clients");
+                _MainCodeBehind.ShowMessage("Клієнт успішно доданий!");
+                _MainCodeBehind.LoadView(ViewType.Clients);
+            }
+            else
+            {
+                _MainCodeBehind.ShowMessage("Не всі поля заповнені!");
             }
         }
 

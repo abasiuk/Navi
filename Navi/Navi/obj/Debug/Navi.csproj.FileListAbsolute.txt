@@ -241,3 +241,5 @@ C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\AddClientView.g.cs
 C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\ShowMoreClientView.g.cs
 C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\AddClientView.baml
 C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\ShowMoreClientView.baml
+D:\dyplom\Navi\Navi\obj\Debug\View\ShowMoreClientView.g.cs
+D:\dyplom\Navi\Navi\obj\Debug\View\ShowMoreClientView.baml
