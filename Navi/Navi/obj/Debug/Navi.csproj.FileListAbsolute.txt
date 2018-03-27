@@ -237,3 +237,7 @@ D:\dyplom\Navi\Navi\obj\Debug\Navi.csproj.GenerateResource.Cache
 D:\dyplom\Navi\Navi\obj\Debug\Navi.csproj.CoreCompileInputs.cache
 D:\dyplom\Navi\Navi\obj\Debug\Navi.exe
 D:\dyplom\Navi\Navi\obj\Debug\Navi.pdb
+C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\AddClientView.g.cs
+C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\ShowMoreClientView.g.cs
+C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\AddClientView.baml
+C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\ShowMoreClientView.baml

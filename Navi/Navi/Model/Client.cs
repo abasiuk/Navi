@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Navi.Model
 {
-    class Client
+    public class Client
     {
         private int id;
         private string firstName;

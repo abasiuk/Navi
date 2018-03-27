@@ -152,24 +152,48 @@ namespace Navi.ViewModel
                     ViewModel.MyConnection myConn = new ViewModel.MyConnection();
                     ds = myConn.GetData("SELECT * from clients", "clients");
                     DataColumn dc = ds.Tables["clients"].Columns[0];
-                    ds.Tables["clients"].PrimaryKey = dc;
+                    DataColumn[] collectionDc = new DataColumn[1];
+                    collectionDc[0] = dc;
+                    ds.Tables["clients"].PrimaryKey = collectionDc;
                     ds.Tables["clients"].Rows.Find(Selected.ID).Delete();
 
                     myConn.UpdateData(ds, "clients");
 
                     _MainCodeBehind.ShowMessage(Selected.FirstName);
                 }
-                else
-                {
-                    
-
-                }
             }
             else
             {
                 _MainCodeBehind.ShowMessage("Жоден клієнт не вибраний!");
             }
-            
+        }
+
+
+        private RelayCommand _ShowMoreClientCommand;
+        public RelayCommand ShowMoreClientCommand
+        {
+            get
+            {
+                return _ShowMoreClientCommand = _ShowMoreClientCommand ??
+                  new RelayCommand(LoadShowMoreClientContent, CanLoadShowMoreClientContent);
+            }
+        }
+        private bool CanLoadShowMoreClientContent()
+        {
+            return true;
+        }
+        private void LoadShowMoreClientContent()
+        {
+            if (Selected != null)
+            {
+                View.ShowMoreClientView showMoreWindow = new View.ShowMoreClientView(Selected);
+
+                showMoreWindow.ShowDialog();
+            }
+            else
+            {
+                _MainCodeBehind.ShowMessage("Жоден клієнт не вибраний!");
+            }
         }
     }
 }

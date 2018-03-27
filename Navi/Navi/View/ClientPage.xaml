@@ -20,7 +20,7 @@
             </ListBox>
             <Button Style="{StaticResource MainButton}" Content="Добавити клієнта" Command="{Binding AddClientCommand, Mode=OneTime}"/>
             <Button Style="{StaticResource MainButton}" Content="Видалити клієнта" Command="{Binding RemoveClientCommand, Mode=OneTime}" CommandParameter="{Binding Selected}"/>
-            <Button Style="{StaticResource MainButton}" Content="Детальніше про клієнта"/>
+            <Button Style="{StaticResource MainButton}" Content="Детальніше про клієнта" Command="{Binding ShowMoreClientCommand, Mode=OneTime}" CommandParameter="{Binding Selected}"/>
 
         </StackPanel>
         <StackPanel Grid.Column="1">
