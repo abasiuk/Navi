@@ -195,5 +195,32 @@ namespace Navi.ViewModel
                 _MainCodeBehind.ShowMessage("Жоден клієнт не вибраний!");
             }
         }
+
+        public RelayCommand<Model.Client> SelectClickCommand
+        {
+            get
+            {
+                return new RelayCommand<Model.Client>(parametr => {
+                    Selected = parametr;
+                    if (Selected != null)
+                    {
+                        CurrentName = Selected.GetFullName();
+                        CurrentID = Selected.ID.ToString();
+                        CurrentAge = Selected.Age.ToString();
+                        CurrentDateBorn = Selected.DateBorn;
+                        CurrentDateOfLastVisit = Selected.DateOfLastVisit;
+                        CurrentPhoto = Photos.GetUserPhoto(Selected.ID);
+                    }
+                });
+            }
+        }
+        private bool CanClickOnList()
+        {
+            return true;
+        }
+        private void ClickOnList()
+        {
+            _MainCodeBehind.ShowMessage("Csa");
+        }
     }
 }

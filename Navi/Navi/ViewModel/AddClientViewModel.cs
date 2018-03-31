@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Data;
+using Microsoft.Win32;
 
 namespace Navi.ViewModel
 {
@@ -23,7 +24,7 @@ namespace Navi.ViewModel
 
             _MainCodeBehind = codeBehind;
         }
-
+        string picturePath = "";
         string _lastNameText = "";
 
         public string LastNameText
@@ -135,7 +136,9 @@ namespace Navi.ViewModel
                 ViewModel.MyConnection myConn = new ViewModel.MyConnection();
                 ds = myConn.GetData("SELECT * from clients", "clients");
                 DataRow currentRow = ds.Tables["clients"].NewRow();
-                currentRow[0] = Int32.Parse(ds.Tables["clients"].Rows[ds.Tables["clients"].Rows.Count - 1][0].ToString()) + 1;
+                int currentUserId = 0000;
+                currentUserId = Int32.Parse(ds.Tables["clients"].Rows[ds.Tables["clients"].Rows.Count - 1][0].ToString()) + 1;
+                currentRow[0] = currentUserId;
                 currentRow[1] = FirstNameText;
                 currentRow[2] = LastNameText;
                 currentRow[3] = totalYears;
@@ -146,13 +149,46 @@ namespace Navi.ViewModel
                 currentRow[8] = SubscriptionText;
                 ds.Tables["clients"].Rows.Add(currentRow);
 
-                myConn.UpdateData(ds, "clients");
+                if (picturePath != String.Empty)
+                {
+                    Model.Photos.SaveImageToDataBase(picturePath, currentUserId);
+                    myConn.UpdateData(ds, "clients");
+                }
+                else
+                {
+                    _MainCodeBehind.ShowMessage("Ви не обрали зображення!");
+                    return;
+                }
                 _MainCodeBehind.ShowMessage("Клієнт успішно доданий!");
+                Model.Photos.ReadImageFromDatabase();
                 _MainCodeBehind.LoadView(ViewType.Clients);
+                
             }
             else
             {
                 _MainCodeBehind.ShowMessage("Не всі поля заповнені!");
+            }
+        }
+
+        private RelayCommand _AddPictureCommand;
+        public RelayCommand AddPictureCommand
+        {
+            get
+            {
+                return _AddPictureCommand = _AddPictureCommand ??
+                  new RelayCommand(AddPictureClient, CanAddPictureClient);
+            }
+        }
+        private bool CanAddPictureClient()
+        {
+            return true;
+        }
+        private void AddPictureClient()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if ((bool)ofd.ShowDialog())
+            {
+                picturePath = ofd.FileName;
             }
         }
 

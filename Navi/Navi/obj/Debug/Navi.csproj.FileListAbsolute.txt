@@ -243,3 +243,7 @@ C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\AddClientView.baml
 C:\Users\Everad\Source\Repos\Navi2\Navi\Navi\obj\Debug\View\ShowMoreClientView.baml
 D:\dyplom\Navi\Navi\obj\Debug\View\ShowMoreClientView.g.cs
 D:\dyplom\Navi\Navi\obj\Debug\View\ShowMoreClientView.baml
+D:\dyplom\Navi\Navi\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\dyplom\Navi\Navi\bin\Debug\System.Windows.Interactivity.dll
+D:\dyplom\Navi\Navi\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\dyplom\Navi\Navi\bin\Debug\System.Windows.Interactivity.xml
