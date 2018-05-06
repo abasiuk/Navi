@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\dyplom\Navi\Navi\App.xaml
-9-1164717769
+11-1661742937
 
-221812399351
+281912661447
 16760798426
-MainWindow.xaml;Styles\Colors.xaml;Styles\Style.xaml;View\AddClientView.xaml;View\Authorization.xaml;View\ClientPage.xaml;View\MainWelcomeContent.xaml;View\Menu.xaml;View\ShowMoreClientView.xaml;
+MainWindow.xaml;Styles\Colors.xaml;Styles\Style.xaml;View\AddClientView.xaml;View\AddSubscriptionView.xaml;View\Authorization.xaml;View\ClientPage.xaml;View\MainWelcomeContent.xaml;View\Menu.xaml;View\ShowMoreClientView.xaml;View\SubscriptionView.xaml;
 
 False
 

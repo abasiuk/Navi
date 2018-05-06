@@ -247,3 +247,7 @@ D:\dyplom\Navi\Navi\bin\Debug\Microsoft.Expression.Interactions.dll
 D:\dyplom\Navi\Navi\bin\Debug\System.Windows.Interactivity.dll
 D:\dyplom\Navi\Navi\bin\Debug\Microsoft.Expression.Interactions.xml
 D:\dyplom\Navi\Navi\bin\Debug\System.Windows.Interactivity.xml
+D:\dyplom\Navi\Navi\obj\Debug\View\SubscriptionView.g.cs
+D:\dyplom\Navi\Navi\obj\Debug\View\SubscriptionView.baml
+D:\dyplom\Navi\Navi\obj\Debug\View\AddSubscriptionView.g.cs
+D:\dyplom\Navi\Navi\obj\Debug\View\AddSubscriptionView.baml

@@ -13,7 +13,7 @@
                         <Run Text="&#xE0A5; Клієнти" />
             </TextBlock>
         </Button>
-        <Button Command="{Binding LoadFirstUCCommand, Mode=OneTime}"
+        <Button Command="{Binding LoadSubscriptionPage, Mode=OneTime}"
                 Height="Auto" MinHeight="50">
             <TextBlock FontFamily="Segoe UI Symbol" FontSize="14">
                         <Run Text="&#xE2AF; Абонементи" />

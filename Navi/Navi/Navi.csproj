@@ -63,8 +63,11 @@
     </ApplicationDefinition>
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\ImageData.cs" />
+    <Compile Include="Model\MyTimes.cs" />
     <Compile Include="Model\Photos.cs" />
+    <Compile Include="Model\Subscription.cs" />
     <Compile Include="ViewModel\AddClientViewModel.cs" />
+    <Compile Include="ViewModel\AddSubscriptionViewModel.cs" />
     <Compile Include="ViewModel\AuthorizationViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ClientPageViewModel.cs" />
@@ -72,8 +75,12 @@
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="ViewModel\MyConnection.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\SubscriptionViewModel.cs" />
     <Compile Include="View\AddClientView.xaml.cs">
       <DependentUpon>AddClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddSubscriptionView.xaml.cs">
+      <DependentUpon>AddSubscriptionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
@@ -89,6 +96,9 @@
     </Compile>
     <Compile Include="View\ShowMoreClientView.xaml.cs">
       <DependentUpon>ShowMoreClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubscriptionView.xaml.cs">
+      <DependentUpon>SubscriptionView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +124,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\AddSubscriptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ShowMoreClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SubscriptionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

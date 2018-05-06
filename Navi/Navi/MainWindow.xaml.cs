@@ -44,7 +44,9 @@ namespace Navi
         Main,
         Clients,
         First,
-        Second
+        Second,
+        Subscription,
+        AddSubcription
     }
 
     /// <summary>
@@ -108,6 +110,18 @@ namespace Navi
                     AddClientViewModel vmAddCl = new AddClientViewModel(this);
                     addClView.DataContext = vmAddCl;
                     this.OutputView.Content = addClView;
+                    break;
+                case ViewType.Subscription:
+                    SubscriptionView subView = new SubscriptionView();
+                    SubscriptionViewModel vmSubscription = new SubscriptionViewModel(this);
+                    subView.DataContext = vmSubscription;
+                    this.OutputView.Content = subView;
+                    break;
+                case ViewType.AddSubcription:
+                    AddSubscriptionView addSubView = new AddSubscriptionView();
+                    AddSubscriptionViewModel vmAddSubscription = new AddSubscriptionViewModel(this);
+                    addSubView.DataContext = vmAddSubscription;
+                    this.OutputView.Content = addSubView;
                     break;
             }
         }
